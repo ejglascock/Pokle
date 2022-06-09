@@ -8,7 +8,9 @@ import SearchBar from '../SearchBar/SearchBar';
 function App() {
   return (
     <Fragment>
-      <SearchBar />
+      <div className="container">
+        <SearchBar />
+      </div>
     </Fragment>
   );
 }
