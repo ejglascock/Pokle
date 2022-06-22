@@ -7,7 +7,7 @@ const Display = (props) => {
             <Fragment>
                 <h1 className="text-center mt-5">{props.pokemon.name}</h1>
                 {props.pokemon.types.map(e => (
-                    <h2 className="text-center mt-2">{e.type.name}</h2>
+                    <h2 className="text-center mt-2" key={e.slot}>{e.type.name}</h2>
                 ))}
             </Fragment>
         )
