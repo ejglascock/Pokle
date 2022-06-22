@@ -9,8 +9,10 @@ const SearchBar = () => {
         try {
             const searchItem = description.toLowerCase();
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchItem}`)
-
+            const thing = await response.json();
             console.log(response);
+            console.log(thing);
+            console.log(thing.name);
         } catch (err) {
             console.error(err.message);
         }
