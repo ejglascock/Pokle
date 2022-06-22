@@ -1,6 +1,6 @@
 import React, {Fragment, useState} from "react";
 
-const SearchBar = () => {
+const SearchBar = (props) => {
 
     const [description, setDescription] = useState("Pokemon name or id number");
 
@@ -13,6 +13,7 @@ const SearchBar = () => {
             console.log(response);
             console.log(thing);
             console.log(thing.name);
+            props.pokemonCallback(thing);
         } catch (err) {
             console.error(err.message);
         }

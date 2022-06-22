@@ -1,4 +1,4 @@
-import React, {Fragment} from "react"; 
+import React, {Fragment, useState} from "react"; 
 import './App.css';
 
 //components
@@ -6,10 +6,12 @@ import './App.css';
 import SearchBar from '../SearchBar/SearchBar';
 
 function App() {
+  const [pokemonInfo, setPokemonInfo] = useState({});
+
   return (
     <Fragment>
       <div className="container">
-        <SearchBar />
+        <SearchBar pokemonCallback = {setPokemonInfo} />
       </div>
     </Fragment>
   );
