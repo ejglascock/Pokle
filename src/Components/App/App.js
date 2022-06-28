@@ -1,6 +1,10 @@
 import React, {useState} from "react"; 
 import './App.css';
 
+//components
+import Board from '../Board/Board';
+import Keyboard from '../Keyboard/Keyboard';
+
 
 function App() {
   return (
