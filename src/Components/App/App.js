@@ -1,6 +1,18 @@
 import React, {Fragment, useState} from "react"; 
 import './App.css';
 
+
+function App() {
+  return (
+    <Fragment>
+      
+    </Fragment>
+  )
+}
+
+
+export default App;
+/*
 //components
 
 import SearchBar from '../SearchBar/SearchBar';
@@ -22,3 +34,5 @@ function App() {
 }
 
 export default App;
+*/
+

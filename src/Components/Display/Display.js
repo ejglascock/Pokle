@@ -1,6 +1,7 @@
 import React, {Fragment, useState} from "react";
 import './Display.css';
 
+/*
 const Display = (props) => {
 
     if (props.pokemon.id) {
@@ -18,3 +19,4 @@ const Display = (props) => {
 
 
 export default Display;
+*/

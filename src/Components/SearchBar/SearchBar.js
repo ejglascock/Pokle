@@ -1,5 +1,6 @@
 import React, {Fragment, useState} from "react";
 
+/*
 const SearchBar = (props) => {
 
     const [description, setDescription] = useState("Pokemon name or id number");
@@ -31,3 +32,4 @@ const SearchBar = (props) => {
 }
 
 export default SearchBar;
+*/
