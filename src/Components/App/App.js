@@ -1,12 +1,16 @@
-import React, {Fragment, useState} from "react"; 
+import React, {useState} from "react"; 
 import './App.css';
 
 
 function App() {
   return (
-    <Fragment>
-      
-    </Fragment>
+    <div className="App">
+      <nav>
+        <h1>Pokle</h1>
+      </nav>
+      <Board />
+      <Keyboard />
+    </div>
   )
 }
 
