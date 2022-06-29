@@ -4,7 +4,6 @@ import Word from '../Word/Word';
 import Letter from '../Letter/Letter';
 
 function Board() {
-    const [board, setBoard] = useState(boardDefault);
     return (
         <div className="board">
             <div className="row">

@@ -1,19 +1,25 @@
-import React, {useState} from "react"; 
+import React, { useState, createContext } from "react"; 
 import './App.css';
 
 //components
 import Board from '../Board/Board';
 import Keyboard from '../Keyboard/Keyboard';
+import { boardDefault } from "../Board/Pokemon";
 
+
+export const AppContext = createContext();
 
 function App() {
+  const [board, setBoard] = useState(boardDefault);
   return (
     <div className="App">
       <nav>
         <h1>Pokle</h1>
       </nav>
-      <Board />
-      <Keyboard />
+      <AppContext.Provider value={{ board, setBoard}} >
+        <Board />
+        <Keyboard />
+      </AppContext.Provider>
     </div>
   )
 }
