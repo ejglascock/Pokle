@@ -1,10 +1,10 @@
-import React, { useState, createContext } from "react"; 
+import React, { useState, createContext, useEffect } from "react"; 
 import './App.css';
 
 //components
 import Board from '../Board/Board';
 import Keyboard from '../Keyboard/Keyboard';
-import { boardDefault } from "../Board/GrabBag";
+import { boardDefault, generatePokeSet } from "../Board/GrabBag";
 
 
 export const AppContext = createContext();
@@ -12,8 +12,16 @@ export const AppContext = createContext();
 function App() {
   const [board, setBoard] = useState(boardDefault);
   const [currAttempt, setCurrAttempt] = useState({ attempt: 0, letterPos: 0});
+  const [pokeSet, setPokeSet] = useState(new Set());
 
   const pokemon = "REGIDRAGO"
+
+  useEffect(() => {
+    generatePokeSet()
+    .then((pokes) => {
+      setPokeSet(pokes.pokemon);
+    })
+  }, []);
 
   const onSelectLetter = (keyVal) => {
     if (currAttempt.letterPos > 11) return;
@@ -33,7 +41,12 @@ function App() {
 
   const onEnter = () => {
     if (currAttempt.letterPos < 3) return;
-    setCurrAttempt({attempt: currAttempt.attempt + 1, letterPos: 0})
+    const guess = board[currAttempt.attempt].join('');
+    if (pokeSet.has(guess)) {
+      setCurrAttempt({attempt: currAttempt.attempt + 1, letterPos: 0})
+    } else {
+      alert("Your guess must be a valid Pokemon.");
+    }
   }
 
 
