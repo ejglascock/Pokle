@@ -1,5 +1,5 @@
 import React, {useState} from "react"; 
-import { boardDefault } from "./Pokemon";
+import { boardDefault } from "./GrabBag";
 import Word from '../Word/Word';
 import Letter from '../Letter/Letter';
 
