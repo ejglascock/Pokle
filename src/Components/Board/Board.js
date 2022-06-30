@@ -6,24 +6,12 @@ import Letter from '../Letter/Letter';
 function Board() {
     return (
         <div className="board">
-            <div className="row">
-                <Word attemptVal={0}></Word>
-            </div>
-            <div className="row">
-                <Word attemptVal={1}></Word>
-            </div>
-            <div className="row">
-                <Word attemptVal={2}></Word>
-            </div>
-            <div className="row">
-                <Word attemptVal={3}></Word>
-            </div>
-            <div className="row">
-                <Word attemptVal={4}></Word>
-            </div>
-            <div className="row">
-                <Word attemptVal={5}></Word>
-            </div>
+            <Word attemptVal={0} ></Word>
+            <Word attemptVal={1} ></Word>
+            <Word attemptVal={2} ></Word>
+            <Word attemptVal={3} ></Word>
+            <Word attemptVal={4} ></Word>
+            <Word attemptVal={5} ></Word>
         </div>
     )
 }
