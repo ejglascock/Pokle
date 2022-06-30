@@ -16,17 +16,17 @@ function Keyboard() {
             onDelete();
         } else {
             keys1.forEach((key) => {
-                if (event.key === key) {
+                if (event.key.toLowerCase() === key.toLowerCase()) {
                     onSelectLetter(key);
                 }
             });
             keys2.forEach((key) => {
-                if (event.key === key) {
+                if (event.key.toLowerCase() === key.toLowerCase()) {
                     onSelectLetter(key);
                 }
             });
             keys3.forEach((key) => {
-                if (event.key === key) {
+                if (event.key.toLowerCase() === key.toLowerCase()) {
                     onSelectLetter(key);
                 }
             });
