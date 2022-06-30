@@ -15,14 +15,16 @@ function App() {
   const [currAttempt, setCurrAttempt] = useState({ attempt: 0, letterPos: 0});
   const [pokeSet, setPokeSet] = useState(new Set());
   const [wrongLetters, setWrongLetters] = useState([]);
+  const [pokeOfDay, setPokeOfDay] = useState("");
   const [gameOver, setGameOver] = useState({gameOver: false, guessedWord: false});
 
-  const pokeOfDay = "REGIDRAGO"
+  
 
   useEffect(() => {
     generatePokeSet()
     .then((pokes) => {
       setPokeSet(pokes.pokemon);
+      setPokeOfDay(pokes.todaysPoke)
     })
   }, []);
 
