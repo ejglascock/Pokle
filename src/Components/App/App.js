@@ -14,6 +14,7 @@ function App() {
   const [currAttempt, setCurrAttempt] = useState({ attempt: 0, letterPos: 0});
   const [pokeSet, setPokeSet] = useState(new Set());
   const [wrongLetters, setWrongLetters] = useState([]);
+  const [gameOver, setGameOver] = useState({gameOver: false, guessedWord: false});
 
   const pokeOfDay = "REGIDRAGO"
 
@@ -60,7 +61,7 @@ function App() {
       <nav>
         <h1>Pokle</h1>
       </nav>
-      <AppContext.Provider value={{ board, setBoard, currAttempt, setCurrAttempt, onSelectLetter, onDelete, onEnter, pokeOfDay, wrongLetters, setWrongLetters }} >
+      <AppContext.Provider value={{ board, setBoard, currAttempt, setCurrAttempt, onSelectLetter, onDelete, onEnter, pokeOfDay, wrongLetters, setWrongLetters, gameOver, setGameOver }} >
         <div className="game">
           <Board />
           <Keyboard />
