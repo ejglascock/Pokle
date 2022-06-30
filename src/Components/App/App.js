@@ -13,8 +13,9 @@ function App() {
   const [board, setBoard] = useState(boardDefault);
   const [currAttempt, setCurrAttempt] = useState({ attempt: 0, letterPos: 0});
   const [pokeSet, setPokeSet] = useState(new Set());
+  const [wrongLetters, setWrongLetters] = useState([]);
 
-  const pokemon = "REGIDRAGO"
+  const pokeOfDay = "REGIDRAGO"
 
   useEffect(() => {
     generatePokeSet()
@@ -47,6 +48,10 @@ function App() {
     } else {
       alert("Your guess must be a valid Pokemon.");
     }
+
+    if (guess === pokeOfDay) {
+      alert("You guessed correctly!")
+    }
   }
 
 
@@ -55,7 +60,7 @@ function App() {
       <nav>
         <h1>Pokle</h1>
       </nav>
-      <AppContext.Provider value={{ board, setBoard, currAttempt, setCurrAttempt, onSelectLetter, onDelete, onEnter, pokemon }} >
+      <AppContext.Provider value={{ board, setBoard, currAttempt, setCurrAttempt, onSelectLetter, onDelete, onEnter, pokeOfDay, wrongLetters, setWrongLetters }} >
         <div className="game">
           <Board />
           <Keyboard />
