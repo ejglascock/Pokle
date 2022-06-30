@@ -1,7 +1,17 @@
-import React, {useState} from "react";
+import React, { useContext } from "react";
 import Letter from "../Letter/Letter";
+import { AppContext } from "../App/App"
 
 function Word({ attemptVal }) {
+    const { board, pokemon, currAttempt } = useContext(AppContext);
+    const guess = board[attemptVal].join('')
+
+
+    const correct = guess.length === pokemon.length;
+    const almost = !correct && (guess.length === pokemon.length + 1 || guess.length === pokemon.length - 1);
+
+    const wordState = currAttempt.attempt > attemptVal && (correct ? "correct-word" : almost ? "almost-word" : "error-word");
+
     return (
         <div className="row" id={wordState}>
             <Letter letterPos={0} attemptVal={attemptVal} />

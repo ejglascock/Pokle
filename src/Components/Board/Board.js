@@ -1,7 +1,5 @@
-import React, {useState} from "react"; 
-import { boardDefault } from "./GrabBag";
+import React from "react"; 
 import Word from '../Word/Word';
-import Letter from '../Letter/Letter';
 
 function Board() {
     return (
