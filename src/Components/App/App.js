@@ -13,6 +13,8 @@ function App() {
   const [board, setBoard] = useState(boardDefault);
   const [currAttempt, setCurrAttempt] = useState({ attempt: 0, letterPos: 0});
 
+  const pokemon = "REGIDRAGO"
+
   const onSelectLetter = (keyVal) => {
     if (currAttempt.letterPos > 11) return;
     const newBoard = [...board];
@@ -40,7 +42,7 @@ function App() {
       <nav>
         <h1>Pokle</h1>
       </nav>
-      <AppContext.Provider value={{ board, setBoard, currAttempt, setCurrAttempt, onSelectLetter, onDelete, onEnter }} >
+      <AppContext.Provider value={{ board, setBoard, currAttempt, setCurrAttempt, onSelectLetter, onDelete, onEnter, pokemon }} >
         <div className="game">
           <Board />
           <Keyboard />

@@ -3,7 +3,7 @@ import Letter from "../Letter/Letter";
 
 function Word({ attemptVal }) {
     return (
-        <div className="row">
+        <div className="row" id={wordState}>
             <Letter letterPos={0} attemptVal={attemptVal} />
             <Letter letterPos={1} attemptVal={attemptVal} />
             <Letter letterPos={2} attemptVal={attemptVal} />
