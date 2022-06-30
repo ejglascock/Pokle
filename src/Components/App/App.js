@@ -5,6 +5,7 @@ import './App.css';
 import Board from '../Board/Board';
 import Keyboard from '../Keyboard/Keyboard';
 import { boardDefault, generatePokeSet } from "../Board/GrabBag";
+import GameOver from "../GameOver/GameOver";
 
 
 export const AppContext = createContext();
@@ -51,7 +52,12 @@ function App() {
     }
 
     if (guess === pokeOfDay) {
-      alert("You guessed correctly!")
+      setGameOver({gameOver: true, guessedWord: true});
+      return;
+    }
+
+    if (currAttempt.attempt === 5) {
+      setGameOver({gameOver: true, guessedWord: false});
     }
   }
 
@@ -64,7 +70,7 @@ function App() {
       <AppContext.Provider value={{ board, setBoard, currAttempt, setCurrAttempt, onSelectLetter, onDelete, onEnter, pokeOfDay, wrongLetters, setWrongLetters, gameOver, setGameOver }} >
         <div className="game">
           <Board />
-          <Keyboard />
+          {gameOver.gameOver ? <GameOver /> : <Keyboard />}
         </div>
       </AppContext.Provider>
     </div>
