@@ -210,3 +210,7 @@ h3 {
   font-size: 20px;
 }
 
+.gameOver {
+  height: 300px;
+  margin-top: 60px;
+}
