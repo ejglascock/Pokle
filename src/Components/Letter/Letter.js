@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { AppContext } from "../App/App"
 
 function Letter({ letterPos, attemptVal }) {
-    const { board, pokeOfDay, currAttempt, wrongLetters, setWrongLetters } = useContext(AppContext);
+    const { board, pokeOfDay, currAttempt, wrongLetters, setWrongLetters, gameOver } = useContext(AppContext);
     const letter = board[attemptVal][letterPos];
 
     const correct = pokeOfDay[letterPos] === letter
@@ -17,7 +17,7 @@ function Letter({ letterPos, attemptVal }) {
     }, [currAttempt.attempt]);
 
     return (
-        <div className="letter" id={letterState} >{letter}</div>
+        <div className="letter" id={letterState} >{!gameOver.guessedWord ? letter : ""}</div>
     )
 }
 
