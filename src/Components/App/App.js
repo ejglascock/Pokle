@@ -24,7 +24,7 @@ function App() {
     generatePokeSet()
     .then((pokes) => {
       setPokeSet(pokes.pokemon);
-      setPokeOfDay(pokes.todaysPoke)
+      setPokeOfDay(pokes.todaysPoke);
     })
   }, []);
 
@@ -46,7 +46,7 @@ function App() {
 
   const onEnter = () => {
     if (currAttempt.letterPos < 3) return;
-    const guess = board[currAttempt.attempt].join('');
+    const guess = board[currAttempt.attempt].join('').toLowerCase();
     if (pokeSet.has(guess)) {
       setCurrAttempt({attempt: currAttempt.attempt + 1, letterPos: 0})
     } else {
