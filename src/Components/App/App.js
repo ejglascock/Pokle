@@ -49,17 +49,16 @@ function App() {
     const guess = board[currAttempt.attempt].join('').toLowerCase();
     if (pokeSet.has(guess)) {
       setCurrAttempt({attempt: currAttempt.attempt + 1, letterPos: 0})
+      if (guess === pokeOfDay) {
+        setGameOver({gameOver: true, guessedWord: true});
+        return;
+      }
+  
+      if (currAttempt.attempt === 5) {
+        setGameOver({gameOver: true, guessedWord: false});
+      }
     } else {
       alert("Your guess must be a valid Pokemon.");
-    }
-
-    if (guess === pokeOfDay) {
-      setGameOver({gameOver: true, guessedWord: true});
-      return;
-    }
-
-    if (currAttempt.attempt === 5) {
-      setGameOver({gameOver: true, guessedWord: false});
     }
   }
 
