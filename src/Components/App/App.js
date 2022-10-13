@@ -25,6 +25,7 @@ function App() {
     .then((pokes) => {
       setPokeSet(pokes.pokemon);
       setPokeOfDay(pokes.todaysPoke);
+      setPokeOfDay('rattata');
     })
   }, []);
 
@@ -84,7 +85,7 @@ function App() {
     })
 
     guessArray.forEach(guess => {
-      if (checkPokle.includes(guess.letter) && guess.letter != '') {
+      if (checkPokle.includes(guess.letter) && guess.letter != '' && guess.color === 'error') {
           guess.color = 'almost'
           checkPokle = checkPokle.replace(guess.letter, '')
       }
