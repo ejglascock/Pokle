@@ -81,7 +81,7 @@ nav h1 {
 }
 */
 
-#correct {
+.correct {
   background-color: #528d4e;
 }
 
@@ -89,7 +89,7 @@ nav h1 {
   border: 2px solid #528d4e;
 }
 
-#almost {
+.almost {
   background-color: #b49f39;
 }
 
@@ -97,7 +97,7 @@ nav h1 {
   border: 2px solid #b49f39;
 }
 
-#error {
+.error {
   background-color: #3a393c;
 }
 
@@ -156,6 +156,24 @@ nav h1 {
 #wrong {
   background-color: #3a393c;
 }
+
+.flip {
+  animation: 0.15s linear flipping;
+}
+
+@keyframes flipping {
+  0% {
+      transform: rotateX(0deg);
+  }
+  50% {
+      transform: rotateX(90deg);
+  }
+  100% {
+      transform: rotateX(0deg);
+  }
+}
+
+
 
 .App-logo {
   height: 40vmin;

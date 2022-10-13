@@ -13,7 +13,7 @@ function Word({ attemptVal }) {
     const wordState = currAttempt.attempt > attemptVal && (correct ? "correct-word" : almost ? "almost-word" : "error-word");
 
     return (
-        <div className="row" id={wordState}>
+        <div className="row" id={"row-" + attemptVal}>
             <Letter letterPos={0} attemptVal={attemptVal} />
             <Letter letterPos={1} attemptVal={attemptVal} />
             <Letter letterPos={2} attemptVal={attemptVal} />

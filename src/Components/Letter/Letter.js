@@ -17,7 +17,7 @@ function Letter({ letterPos, attemptVal }) {
     }, [currAttempt.attempt]);
 
     return (
-        <div className="letter" id={letterState} >{!gameOver.guessedWord ? letter : ""}</div>
+        <div data={letter} className="letter" id={letterState} >{!gameOver.guessedWord ? letter : ""}</div>
     )
 }
 

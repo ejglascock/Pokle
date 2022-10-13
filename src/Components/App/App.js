@@ -48,6 +48,49 @@ function App() {
     if (currAttempt.letterPos < 3) return;
     const guess = board[currAttempt.attempt].join('').toLowerCase();
     if (pokeSet.has(guess)) {
+
+      // flipTile();
+      const guessArray = []
+      const rowTiles = document.querySelector('#row-' + currAttempt.attempt).childNodes;
+      let checkPokle = pokeOfDay;
+      console.log(rowTiles);
+
+      rowTiles.forEach(tile => {
+        guessArray.push({letter: tile.getAttribute('data').toLowerCase(), color: 'error'})
+      })
+
+      guessArray.forEach((guess, index) => {
+        if (guess.letter == pokeOfDay[index]) {
+          console.log(index)
+          console.log(guess.letter)
+          console.log(pokeOfDay[index])
+          console.log(checkPokle)
+            guess.color = 'correct'
+            checkPokle = checkPokle.replace(guess.letter, '')
+        }
+      })
+
+      guessArray.forEach(guess => {
+        if (checkPokle.includes(guess.letter) && guess.letter != '') {
+          console.log(guess.letter)
+          console.log(checkPokle)
+            guess.color = 'almost'
+            checkPokle = checkPokle.replace(guess.letter, '')
+        }
+      })
+
+      rowTiles.forEach((tile, index) => {
+        setTimeout(() => {
+            tile.classList.add('flip')
+            tile.classList.add(guessArray[index].color)
+        }, 150 * index)
+      })
+
+      console.log(guessArray);
+      console.log(checkPokle);
+      console.log(rowTiles);
+
+
       setCurrAttempt({attempt: currAttempt.attempt + 1, letterPos: 0})
       if (guess === pokeOfDay) {
         setGameOver({gameOver: true, guessedWord: true});
@@ -60,6 +103,10 @@ function App() {
     } else {
       alert("Your guess must be a valid Pokemon.");
     }
+  }
+
+  const flipTile = () => {
+
   }
 
 
