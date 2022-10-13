@@ -25,7 +25,7 @@ function App() {
     .then((pokes) => {
       setPokeSet(pokes.pokemon);
       setPokeOfDay(pokes.todaysPoke);
-      setPokeOfDay('rattata');
+      // setPokeOfDay('rattata');
     })
   }, []);
 
@@ -47,7 +47,7 @@ function App() {
 
   const onEnter = () => {
     if (currAttempt.letterPos < 3) return;
-    console.log(pokeOfDay);
+    // console.log(pokeOfDay);
     const guess = board[currAttempt.attempt].join('').toLowerCase();
     if (pokeSet.has(guess)) {
 
