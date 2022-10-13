@@ -85,7 +85,7 @@ nav h1 {
   background-color: #528d4e;
 }
 
-#correct-word {
+.correct-word {
   border: 2px solid #528d4e;
 }
 
@@ -93,7 +93,7 @@ nav h1 {
   background-color: #b49f39;
 }
 
-#almost-word {
+.almost-word {
   border: 2px solid #b49f39;
 }
 
@@ -101,7 +101,7 @@ nav h1 {
   background-color: #3a393c;
 }
 
-#error-word {
+.error-word {
   border: 2px solid #3a393c;
 }
 
