@@ -18,7 +18,7 @@ function App() {
   const [wrongLetters, setWrongLetters] = useState([]);
   const [pokeOfDay, setPokeOfDay] = useState("");
   const [gameOver, setGameOver] = useState({gameOver: false, guessedWord: false});
-  const [helpOpen, setHelpOpen] = useState(true);
+  const [helpOpen, setHelpOpen] = useState(false);
   
 
   useEffect(() => {
