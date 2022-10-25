@@ -6,6 +6,7 @@ import Board from '../Board/Board';
 import Keyboard from '../Keyboard/Keyboard';
 import { boardDefault, generatePokeSet } from "../Board/GrabBag";
 import GameOver from "../GameOver/GameOver";
+import Help from "../Help/Help";
 
 
 export const AppContext = createContext();
@@ -17,7 +18,7 @@ function App() {
   const [wrongLetters, setWrongLetters] = useState([]);
   const [pokeOfDay, setPokeOfDay] = useState("");
   const [gameOver, setGameOver] = useState({gameOver: false, guessedWord: false});
-
+  const [helpOpen, setHelpOpen] = useState(true);
   
 
   useEffect(() => {
@@ -113,10 +114,19 @@ function App() {
 
   return (
     <div className="App">
-      <nav>
-        <h1>Pokle</h1>
-      </nav>
-      <AppContext.Provider value={{ board, setBoard, currAttempt, setCurrAttempt, onSelectLetter, onDelete, onEnter, pokeOfDay, wrongLetters, setWrongLetters, gameOver, setGameOver }} >
+      <AppContext.Provider value={{ board, setBoard, currAttempt, setCurrAttempt, onSelectLetter, onDelete, onEnter, pokeOfDay, wrongLetters, setWrongLetters, gameOver, setGameOver, helpOpen, setHelpOpen }} >
+        {helpOpen && <Help />}
+        <nav>
+          <h1>Pokle</h1>
+          <div className="help-btn-container">
+            <button className="open-help-btn" onClick={() => {
+              setHelpOpen(true)
+              }} 
+            >
+              ?
+            </button>
+          </div>
+        </nav>
         <div className="game">
           <Board />
           {gameOver.gameOver ? <GameOver /> : <Keyboard />}
