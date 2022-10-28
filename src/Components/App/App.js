@@ -26,12 +26,12 @@ function App() {
     .then((pokes) => {
       setPokeSet(pokes.pokemon);
       setPokeOfDay(pokes.todaysPoke);
-      setPokeOfDay('rattata');
+      // setPokeOfDay('rattata');
     })
   }, []);
 
   const onSelectLetter = (keyVal) => {
-    if (currAttempt.letterPos > 11) return;
+    if (currAttempt.letterPos > 11 || helpOpen) return;
     const newBoard = [...board];
     newBoard[currAttempt.attempt][currAttempt.letterPos] = keyVal;
     setBoard(newBoard);
@@ -39,7 +39,7 @@ function App() {
   }
 
   const onDelete = () => {
-    if (currAttempt.letterPos === 0) return;
+    if (currAttempt.letterPos === 0 || helpOpen) return;
     const newBoard = [...board];
     newBoard[currAttempt.attempt][currAttempt.letterPos - 1] = "";
     setBoard(newBoard);
@@ -47,7 +47,7 @@ function App() {
   }
 
   const onEnter = () => {
-    if (currAttempt.letterPos < 3) return;
+    if (currAttempt.letterPos < 3 || helpOpen) return;
     // console.log(pokeOfDay);
     const guess = board[currAttempt.attempt].join('').toLowerCase();
     if (pokeSet.has(guess)) {
