@@ -26,7 +26,7 @@ function App() {
     .then((pokes) => {
       setPokeSet(pokes.pokemon);
       setPokeOfDay(pokes.todaysPoke);
-      // setPokeOfDay('rattata');
+      setPokeOfDay('rattata');
     })
   }, []);
 
@@ -138,27 +138,3 @@ function App() {
 
 
 export default App;
-/*
-//components
-
-import SearchBar from '../SearchBar/SearchBar';
-import Display from '../Display/Display';
-
-function App() {
-  const [pokemonInfo, setPokemonInfo] = useState({});
-
-  return (
-    <Fragment>
-      <div className="container">
-        <SearchBar pokemonCallback = {setPokemonInfo} />
-      </div>
-      <div className="constainer">
-        <Display pokemon = {pokemonInfo} />
-      </div>
-    </Fragment>
-  );
-}
-
-export default App;
-*/
-
