@@ -299,12 +299,8 @@ h3 {
 @media only screen and (max-width: 600px) {
 
   .game {
-    width: 100vw;
     height: calc(100vh - 40px);
     padding-top: 0%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
   }
 
   nav {
@@ -321,16 +317,10 @@ h3 {
     width: 350px;
     height: 350px;
     margin-top: auto;
-    display: flex;
-    flex-direction: column;
   }
 
   .row {
     flex: auto;
-    display: flex;
-    flex-direction: row;
-    margin: 2px;
-    height: 100%;
   }
 
   .letter {
@@ -343,44 +333,18 @@ h3 {
     margin-top: auto;
   }
 
-  .line1 {
-    margin: 5px;
-  }
-
-  .line2 {
-    margin: 5px;
-  }
-
-  .line3 {
-    margin: 5px;
-  }
-
   .key {
-    width: 30px;
     height: 52px;
     margin: 2px 3px;
-    cursor: pointer;
   }
 
   #big {
-    width: 50px;
     font-size: 12px;
   }
 
   .gameOver {
     height: 180px;
     margin-top: 50px;
-  }
-
-  .help-background {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    display: flex;
-    z-index: 3;
-    justify-content: center;
-    align-items: center;
   }
   
   .help-container {
@@ -390,40 +354,21 @@ h3 {
     overflow: scroll;
   }
   
-  ul {
-    padding: 0.5em 0 0 15px;
-  }
-  
   li {
-    list-style-type: none;
     padding-left: 10px;
-  }
-  
-  li:before {
-    content:'';
-    float:left;
-    display:list-item;
-    list-style-type: disc;
-    list-style-position:inside;
-    width:20px;
-    margin-left:-20px;
   }
 
 }
 
-/* @media only screen and (max-width: 812px) and (orientation: landscape) {
+@media only screen and (max-width: 1280px) {
 
-  .game {
-    width: 100vw;
+  /* .game {
     height: calc(100vh - 40px);
-    display: flex;
-    align-items: center;
-    padding-top: 20px;
-    flex-direction: column;
+    padding-top: 0%;
   }
 
   nav {
-    height: 80px;
+    height: 40px;
     place-items: center start;
   }
 
@@ -435,16 +380,11 @@ h3 {
   .board {
     width: 350px;
     height: 350px;
-    display: flex;
-    flex-direction: column;
+    margin-top: auto;
   }
 
   .row {
     flex: auto;
-    display: flex;
-    flex-direction: row;
-    margin: 2px;
-    height: 100%;
   }
 
   .letter {
@@ -454,47 +394,21 @@ h3 {
 
   .keyboard {
     height: 200px;
-    margin-top: 30px;
-  }
-
-  .line1 {
-    margin: 5px;
-  }
-
-  .line2 {
-    margin: 5px;
-  }
-
-  .line3 {
-    margin: 5px;
+    margin-top: auto;
   }
 
   .key {
-    width: 30px;
     height: 52px;
     margin: 2px 3px;
-    cursor: pointer;
   }
 
   #big {
-    width: 50px;
-    font-size: 10px
+    font-size: 12px;
   }
 
   .gameOver {
     height: 180px;
     margin-top: 50px;
-  }
-
-  .help-background {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    display: flex;
-    z-index: 3;
-    justify-content: center;
-    align-items: center;
   }
   
   .help-container {
@@ -504,23 +418,8 @@ h3 {
     overflow: scroll;
   }
   
-  ul {
-    padding: 0.5em 0 0 15px;
-  }
-  
   li {
-    list-style-type:none;
     padding-left: 10px;
-  }
-  
-  li:before {
-    content:'';
-    float:left;
-    display:list-item;
-    list-style-type: disc;
-    list-style-position:inside;
-    width:20px;
-    margin-left:-20px;
-  }
+  } */
 
-} */
+}
