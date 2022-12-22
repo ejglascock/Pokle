@@ -224,7 +224,7 @@ li:before {
   display: grid;
   place-items: center;
   font-size: 20px;
-  background-color: grey;
+  background-color: #575757;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
@@ -236,7 +236,7 @@ li:before {
 }
 
 #wrong {
-  background-color: #3a393c;
+  background-color: #333333;
 }
 
 .flip {
